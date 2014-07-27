@@ -1,0 +1,258 @@
+% =====================================================================
+% === LaTeX Header: Math ==============================================
+% =====================================================================
+% ---
+% ---
+% ---
+
+% === Packages ========================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{nicefrac}
+
+% === TikZ ============================================================
+
+\usepackage{tikz}
+  \usetikzlibrary{matrix}
+  \usetikzlibrary{fit}
+  \usetikzlibrary{backgrounds}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{calc}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{mindmap}
+
+% --- Stuff
+
+\usepackage{calc}
+\usepackage{ifthen}
+
+% === Theorem Styles ==================================================
+
+\newtheoremstyle{thm_slanted}
+{8pt} %Space above
+{8pt} %Space below
+{\slshape}    %Body font
+{} % Indent amount 
+{\bfseries}  % Thm head font
+{}           % Punctuation after thm head
+{0.5em}        % Space after thm head
+{\thmname{#1}\thmnumber{ [#2]}\thmnote{ (#3)}}
+
+\newtheoremstyle{thm_normal}
+{8pt} %Space above
+{8pt} %Space below
+{}    %Body font
+{} % Indent amount 
+{\bfseries}  % Thm head font
+{}           % Punctuation after thm head
+{0.5em}        % Space after thm head
+{\thmname{#1}\thmnumber{ [#2]}\thmnote{ (#3)}}
+
+\newtheoremstyle{thm_slanted_nonumber}
+{8pt} %Space above
+{8pt} %Space below
+{\slshape}    %Body font
+{} % Indent amount 
+{\bfseries}  % Thm head font
+{}           % Punctuation after thm head
+{0.5em}        % Space after thm head
+{\thmname{#1}\thmnote{ (#3)} }
+
+\newtheoremstyle{thm_normal_nonumber}
+{8pt} %Space above
+{8pt} %Space below
+{}    %Body font
+{} % Indent amount 
+{\bfseries}  % Thm head font
+{}           % Punctuation after thm head
+{0.5em}        % Space after thm head
+{\thmname{#1}\thmnote{ (#3)} }
+
+% === Theorem Proofs ==================================================
+
+% Kein Punkt am Ende von „Beweis.“
+\makeatletter
+\let\@addpunct\@gobble
+\makeatother
+
+\renewcommand{\qedsymbol}{$\Box$}
+
+% Doppelpunkt am Ende von „Beweis:“
+\addto{\captionsngerman}{%
+  \def\proofname{Beweis:}
+}
+
+% === Theorem Environments ============================================
+
+\theoremstyle{thm_slanted}
+  \newtheorem{satz}{Satz}[section]
+  \newtheorem{hsatz}[satz]{Hauptsatz} 
+  \newtheorem{bem}[satz]{Bemerkung} 
+  \newtheorem{folg}[satz]{Folgerung}
+
+  \newtheorem{prop}[satz]{Proposition} 
+  \newtheorem{thrm}[satz]{Theorem}
+  \newtheorem{lemm}[satz]{Lemma}
+  \newtheorem{kor}[satz]{Korollar}
+
+  \newtheorem{defin}[satz]{Definition}
+
+\theoremstyle{thm_normal}
+  \newtheorem*{anm}{\emph{Anmerkung}}
+  \newtheorem*{frage}{Fragestellung}
+  \newtheorem{alg}[satz]{Algorithmus}
+  \newtheorem{bsp}[satz]{Beispiel}
+  \newtheorem{aufg}{Aufgabe}
+
+\theoremstyle{thm_slanted_nonumber}
+  \newtheorem{satzn}{Satz}
+  \newtheorem{hsatzn}{Hauptsatz} 
+  \newtheorem{bemn}{Bemerkung} 
+  \newtheorem{folgn}{Folgerung}
+
+  \newtheorem{propn}{Proposition} 
+  \newtheorem{thmn}{Theorem}
+  \newtheorem{korn}{Korollar}
+  \newtheorem{lemmn}{Lemma}
+
+  \newtheorem{definn}{Definition}
+
+\theoremstyle{thm_normal_nonumber}
+  \newtheorem{algn}{Algorithmus}
+  \newtheorem{aufgn}{Aufgabe}
+  \newtheorem{bspn}{Beispiel}
+
+% === Aliases / Operators =============================================
+
+% --- Numbers
+
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+
+% --- Fields
+
+\newcommand{\KK}{\mathbb K}
+\newcommand{\FF}{\mathbb F}
+
+% --- Sets
+
+\newcommand{\LL}{\mathbb L}
+
+\newcommand{\sbeq}{\subseteq}
+\newcommand{\speq}{\supseteq}
+
+\newcommand{\sbneq}{\subsetneq}
+\newcommand{\spneq}{\supsetneq}
+
+\newcommand{\idealin}{\trianglelefteq}
+\newcommand{\idealni}{\trianglerighteq}
+
+% --- Script
+
+\newcommand{\BB}{\mathcal B}
+\newcommand{\MM}{\mathcal M}
+\newcommand{\TT}{\mathcal T}
+
+% --- Brackets
+
+\def\<{\left\langle}
+\def\>{\right\rangle}
+
+% --- Arrows
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\mt}{\mapsto}
+\newcommand{\lmt}{\longmapsto}
+
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+
+\newcommand{\gdw}{\Leftrightarrow}
+
+\newcommand{\col}{\colon}
+
+% --- Definitions
+
+\newcommand{\ceq}{\coloneqq}
+\newcommand{\qec}{\eqqcolon}
+
+% --- Foundations
+
+\DeclareMathOperator{\Pot}{Pot}
+
+\renewcommand{\Im}{\text{\textup{Im}}}
+\DeclareMathOperator{\Ker}{Ker}
+
+\DeclareMathOperator{\id}{id}
+
+% --- Analysis
+
+\newcommand{\del}{\partial}
+\DeclareMathOperator{\dd}{d}
+
+\DeclareMathOperator{\Const}{Const}
+
+% --- Algebra
+
+\DeclareMathOperator{\Quot}{Quot}
+
+\DeclareMathOperator{\Char}{Char}
+
+\DeclareMathOperator{\Coker}{koker}
+
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Eig}{Eig}
+
+\DeclareMathOperator{\Der}{Der}
+\def\IDer{\mathbb{D}\text{\textup{er}}}
+
+% --- Self made
+
+\newcommand{\quotspace}[2]
+  {{\raisebox{.1em}{$#1$}\hspace{-0.15em}\left/\raisebox{-.15em}{$#2$}\right.}}
+
+\newcommand{\polyn}[3]
+  { {#1}^{#3} + {#2}_{{#3} -1}{#1}^{{#3} -1} + \dots + {#2}_0 }
+
+\newcommand{\laurent}[1]
+  { (\kern-0.35ex( #1  )\kern-0.35ex) }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

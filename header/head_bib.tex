@@ -1,0 +1,40 @@
+% =====================================================================
+% === LaTeX Header: Quotes & Bibliography =============================
+% =====================================================================
+% ---
+% ---
+% ---
+
+% === Quote Environment ===============================================
+
+\usepackage{csquotes}
+
+% === Bibliography  ===================================================
+
+\usepackage[
+  backend=biber,
+  language=auto,
+  style=alphabetic,
+  refsection=section, % Reference by Section
+  hyperref=auto,
+  sorting=nty,
+  natbib=true  
+]
+{biblatex}
+
+% === References ======================================================
+
+\usepackage
+  [
+   colorlinks,linkcolor=black,urlcolor=black,
+   pdfpagelabels,
+   pdfstartview = FitH,
+   bookmarksopen = true,
+   bookmarksnumbered = true,
+   linkcolor = black,
+   plainpages = false,
+   hypertexnames = false,
+   citecolor = black
+  ]
+  {hyperref}
+

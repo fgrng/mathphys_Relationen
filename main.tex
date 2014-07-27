@@ -1,0 +1,80 @@
+% =====================================================================
+% === Vorkurs: Relationen, Gruppen ====================================
+% =====================================================================
+% --- Filename:     main.tex (tex-file)
+% --- Created:      2012-09-20
+% --- Description:  
+% ---
+% ---
+
+% --- Compile:
+% pdflatex main; 
+% biber main;
+% pdflatex main;
+
+% ---------------------------------------------------------------------
+% --- Header ----------------------------------------------------------
+% ---------------------------------------------------------------------
+
+\providecommand\onetwostyle{oneside}
+\input{header/head_koma.tex}
+\input{header/head_math.tex}
+\input{header/head_typo.tex}
+\input{header/head_item.tex}
+\input{header/head_graphics.tex}
+\input{header/head_bib.tex}
+
+\input{header/head_debug.tex}
+
+% ---
+
+\title{Relationen und Abbildungen}
+\author{Fabian Gruenig}
+\date{2013-10-7}
+
+%--- Kopf- und Fußzeile
+\pagestyle{fancy}
+
+  \fancyhead{} % clear all header fields
+  \fancyhead[L]{\nouppercase{\slshape \leftmark}}
+  \fancyhead[R]{}
+
+  \fancyfoot{} % clear all footer fields
+  \fancyfoot[C]{\small{\thepage}}
+
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+
+\raggedbottom
+
+% ---------------------------------------------------------------------
+% --- Content ---------------------------------------------------------
+% ---------------------------------------------------------------------
+
+\begin{document}
+
+% --- Content ---------------------------------------------------------
+
+\pagenumbering{roman}
+
+\input{content/title.tex}
+
+\pagenumbering{arabic}
+
+\input{content/vorwort.tex}
+\newpage
+\input{content/mengen.tex}
+\newpage
+\input{content/relationen.tex}
+\newpage
+\input{content/abbildungen.tex}
+
+\newpage
+\input{content/aufg_rel.tex}
+\input{content/aufg_abb.tex}
+
+% ---------------------------------------------------------------------
+% --- End -------------------------------------------------------------
+% ---------------------------------------------------------------------
+
+\end{document}

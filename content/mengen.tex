@@ -1,0 +1,215 @@
+\section{Naive Mengenlehre}
+
+Wir verwenden in diesem Vortrag eine naive Mengenlehre und wiederholen
+einige Grundlagen. Wer sich für die Probleme des naiven Mengenbegriffs
+interessiert oder diese gar fürchtet, den verweise ich auf den Vortrag
+„Mengen, natürlich Zahlen,
+Induktion“\footnote{\href{http://johannes.uni-hd.de/vorkurs/2013/skripte/mengen/mengen.pdf}{johannes.uni-hd.de/vorkurs/2013/skripte/mengen/mengen.pdf}}
+von Tim Adler. In der praktischen Anwendung auf dem Niveau dieses Vortrags
+unterscheiden sich diese Mengenbegriffe nicht.
+
+\begin{definn}[Georg Cantor, 1895]
+
+  „Unter einer \emph{Menge} verstehen wir jede Zusammenfassung $M$ von
+  bestimmten wohlunterschiedenen Objekten $m$ unserer Anschauung oder
+  unseres Denkens (welche die \emph{Elemente} von $M$ genannt werden) zu
+  einem Ganzen.“ 
+
+\end{definn}
+
+% ---
+
+Wir bezeichnen Mengen typischerweise mit großen lateinischen Buchstaben
+$A$, $B$, $M$, $X$, $Y$. Sprechen wir von Elementen einer Menge, so
+bezeichnen wir diese mit kleinen lateinischen Buchstaben $a,b,m,x,y$. Ist
+$m$ ein Element von $M$, so schreiben wir
+\begin{align*}
+  m \in M.
+\end{align*}
+Ist $m$ kein Element von $M$, so schreiben wir
+\begin{align*}
+  m \notin M.
+\end{align*}
+Wir nennen die Menge, welche keine Elemente enthält, die
+\emph{leere Menge} und bezeichnen diese mit $\emptyset$.
+
+% ---
+
+\begin{definn}
+
+  Seien $X$, $Y$ Mengen, dann nennen wir $X$ eine \emph{Teilmenge} von $Y$,
+  falls für alle Elemente $x \in X$ auch $x \in Y$ gilt. Gegebenenfalls
+  schreiben wir
+  \begin{align*}
+    X \sbeq Y % \text{ oder } X \subset Y.
+  \end{align*}
+  Existiert in diesem Fall ein Element $y\in Y$, welches nicht in $X$
+  enthalten ist ($y\notin X$), so nennen wir $X$ eine \emph{echte
+    Teilmenge} und schreiben
+  \begin{align*}
+    X \subsetneq Y.
+  \end{align*}
+
+\end{definn}
+
+% ---
+
+\begin{definn}
+
+  Seien $X$, $Y$ Mengen. Wir nennen $X,Y$ \emph{gleich} oder
+  \emph{identisch} und schreiben
+  \begin{align*}
+    X = Y,
+  \end{align*}
+  falls sowohl $X\sbeq Y$, als auch $Y\sbeq X$ gilt.
+\end{definn}
+
+% ---
+
+\begin{bspn}
+
+  Wir definieren Mengen (und damit ihre Elemente) auf verschiedene Weisen.
+  \begin{enumerate}
+
+    \item \emph{Explizite Angabe oder Aufzählung der Elemente} \\
+      Geben wir alle Elemente einer Menge explizit an, so verwenden wir
+      geschwungene Klammern und trennen die Elemente durch Kommata ab.
+      \begin{align*}
+        \{ 1, 2, 3 \} \text{ oder } \{ \text{Alice}, \text{Bob} \}.
+      \end{align*}
+      Dabei beachten wir weder die Reihenfolge der Angabe noch die
+      Doppelnennung etwaiger Elemente. Es gilt etwa
+      \begin{align*}
+        \{ 1, 2, 3 \} = \{1, 3, 2 \} = \{ 3, 2, 1, 1\}.
+      \end{align*}
+      Besitzt eine Menge nicht endlich viele (oder sehr viele) Elemente,
+      können (oder wollen) wir ihre Elemente nicht aufzählen In diesen
+      Fällen behelfen wir uns mit anderen Möglichkeiten. Ist die
+      Fortsetzung der Angabe klar, so können wir Fortsetzungspunkte
+      verwenden.
+      \begin{align*}
+        \{ 1, 2, 3, 4, … \} \text{ oder } \{ a, b, c, …, A, B, C, …\}
+      \end{align*}
+      
+    \item \emph{Angabe durch definierende Eigenschaften} \\
+      Charakerisieren wir eine Menge durch eine gemeinsame Eigenschaft $E$
+      ihrer Elemente, so schreiben wir 
+      \begin{align*}
+        \{ x \mid E(x) \}.
+      \end{align*}
+      Verwenden wir für diese Charakterisierung mehrere Eigenschaften
+      $E_{1},E_{2},E_{3},…$, so können wir diese mittels logischen
+      Operatoren verknüpfen.
+      \begin{align*}
+        \{ x \mid E_{1}(x) \wedge E_{2}(x) \wedge E_{3}(x) \wedge … \}\\
+        \{ x \mid E_{1}(x) \vee E_{2}(x) \vee E_{3}(x) \vee … \}
+      \end{align*}
+      Wollen wir etwa alle natürlichen Zahlen, die gerade sind, zu einer
+      Menge zusammenfassen, so formulieren wir dies durch
+      \begin{align*}
+        \{ x \mid x\in\NN \wedge (x\text{ ist gerade.}) \}.
+      \end{align*}
+
+    \end{enumerate}      
+
+    
+    Wollen wir über ein (unbestimmtes) Element einer Menge reden, so
+    verwenden wir \emph{Elementvariablen}. Es kann $x \in \{ \text{Alice},
+    \text{Bob} \}$ für Alice oder Bob stehen, ist aber innerhalb $X$
+    unbestimmt. Alice ist eine \emph{Elementkonstante} von $\{
+    \text{Alice}, \text{Bob} \}$, also bestimmt.
+
+\end{bspn}
+
+% ---
+
+\begin{definn}
+
+  Sei $X$ eine Menge. Dann nennen wir die Menge aller Teilmengen von $X$
+  die \emph{Potenzmenge von $X$} und bezeichnen diese mit
+  \begin{align*}
+    \Pot(X) \ceq \{ Y \mid Y\sbeq X\}.
+  \end{align*}
+
+\end{definn}
+
+% ---
+
+\begin{bspn}
+
+  Sei $X \ceq \{ 1, 2, 3 \}$. Dann ist
+  \begin{align*}
+    \Pot(X) = \big\{ \emptyset, \{  1 \}, \{ 2 \}, \{ 3 \}, 
+     \{ 1,2 \}, \{ 1,3 \}, \{ 2,3 \}, 
+     \{ 1,2,3 \} \big\}.
+  \end{align*}
+
+\end{bspn}
+
+% ---
+
+\begin{definn}
+
+  Seien $X,Y$ Mengen, dann nennen wir die Menge aller (geordneten) Paare
+  von Elementen von $X$ und $Y$ das \emph{kartesische Produkt} und
+  schreiben
+  \begin{align*}
+    X \times Y \ceq \{ (x,y) \mid x\in X, y\in Y \}.
+  \end{align*}
+  
+\end{definn}
+
+% ---
+
+\begin{bspn}
+
+  Seien $X \ceq \{ 1, 2, 3 \}$ und $Y \ceq \{ \text{Alice}, \text{Bob}
+  \}$. Dann ist
+  \begin{align*}
+    X \times Y = \big\{ &(1, \text{Alice}), (2, \text{Alice}), (3,\text{Alice}), \\
+    &(1, \text{Bob}), (2, \text{Bob}), (3, \text{Bob}) \big\}
+  \end{align*}
+  
+\end{bspn}
+
+
+% ---
+
+\begin{definn}
+
+  Seien $X,Y$ und $X_{1}, X_{2}, X_{3}, \dots$ Mengen. Wir definieren
+  \begin{align*}
+    X \cup Y \ceq \{ z \mid z\in X \text{ oder } z\in Y\}
+  \end{align*}
+  als die \emph{Vereinigung von $X$ und $Y$} und
+  \begin{align*}
+    X \cap Y \ceq \{ z \mid z\in X \text{ und } z\in Y\}
+  \end{align*}
+  als den \emph{Schnitt von $X$ und $Y$}.
+  Ausserdem schreiben wir
+  \begin{align*}
+    \bigcup_{i}X_{i} \,\text{ bzw. }\, \bigcap_{i}X_{i}
+  \end{align*}
+  für die Vereinigung bzw. den Schnitt aller Mengen $X_{1}, X_{2}, X_{3}, \dots$.\footnote{Diese
+    Notation ist nur dann wohldefiniert, falls $\cup$ bzw. $\cap$ assoziativ
+  und kommutativ sind. Der Nachweis dieser Eigenschaften ist eine lohnende
+  Übungsaufgabe.}
+\end{definn}
+
+% ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

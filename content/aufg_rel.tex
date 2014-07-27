@@ -1,0 +1,126 @@
+\section{Aufgaben}
+
+% ---
+
+\subsection{Naive Mengenlehre}
+
+% ---
+
+\begin{aufg}
+
+  Wir betrachten die Mengen $T \ceq \{ \text{Dr.} \}, A \ceq \{ \text{Herr, Frau} \}$, $V
+  \ceq \{ \text{Alice, Bob} \}$ und $N \ceq \{ \text{Hathaway, Sinclair, Wayne}
+  \}$. Bilde die folgenden Mengen.
+  \begin{enumerate}
+    \item $A \times N$
+    \item $A \times (V \times N)$
+    \item $(A\times T) \times (V\times N)$
+    \item $(T \times V) \cup (A \times V)$
+  \end{enumerate}
+  
+\end{aufg}
+
+% ---
+
+\begin{aufg}
+
+  Seien $X,Y,Z$ Mengen. Beweise, dass folgenden Identitäten gelten.
+  \begin{enumerate}
+    \item $(X\cup Y) \cup Z = X\cup (Y\cup Z)$
+    \item $(X\cap Y) \cap Z = X\cap (Y\cap Z)$
+    \item $X \cup Y = Y \cup X$
+    \item $X \cap Y = Y \cap X$
+  \end{enumerate}
+  (Diese Aufgabe ist optional.)
+  
+\end{aufg}
+
+% ---
+
+\subsection{Partitionen und Äquivalenzrelationen}
+
+% ---
+
+\begin{aufg}
+
+  Betrachte die Menge $M \ceq \{ \text{Alice, Bob, Charlie, Dave} \}$. Welche der
+  folgenden Mengen $P_{i}$ sind Partitionen von $M$?
+  \begin{enumerate}
+    \item $P_{5}\ceq\big\{  \{ \text{Alice , Bob}  \} , \{ \text{Dave} \} \big\}$
+    \item $P_{2}\ceq\big\{ \text{Dave, Alice, Bob, Charlie} \big\}$
+    \item $P_{3}\ceq\big\{  \{ \text{Dave, Alice, Bob, Charlie} \} \big\}$
+    \item $P_{4}\ceq\big\{  \{ \text{Dave} \} , \{ \text{Alice} \} , \{ \text{Charlie} \} , \{ \text{Bob} \} \big\}$
+    \item $P_{1}\ceq\big\{  \{ \text{Dave} \} , \{ \text{Bob}, \text{Charlie} \} , \{ \text{Alice}, \text{Dave} \}  \big\}$
+  \end{enumerate}
+  Bilde zwei weitere Partitionen von $M$.
+  
+\end{aufg}
+
+% ---
+
+\begin{aufg}
+
+  Betrachte $M \ceq \{ a, b, c, d\}$. Sind die folgenden Relationen auf $M$
+  reflexiv, symmetrisch, transitiv, Äquivalenzrelationen?
+  \begin{enumerate}
+    \item $R_{1} \ceq \{ (a,a) , (b,b) , (c,c) , (a,b) \}$
+    \item $R_{1} \ceq \{ (a,a) , (b,b) , (c,c) , (d,d) \}$
+    \item $R_{2} \ceq \{ (a,b) , (b,c) , (c,d) , (d,a) \}$
+    \item $R_{3} \ceq \{ (a,a) , (b,b) , (a,b) , (b,a) , (c,c) , (d,d)\}$
+    \item $R_{4} \ceq \{ (a,b) , (b,c) , (c,d) , (a,c) , (a,d) , (b,d)\}$
+  \end{enumerate}
+  Bilde zwei weitere Äquivalenzrelationen auf $M$.
+  
+\end{aufg}
+
+% ---
+
+\begin{aufg}
+
+  Welche der folgenden Relationen sind Äquivalenzrelationen? Gib
+  gegebenenfalls die Äquivalenzklassen an.
+  \begin{enumerate}
+    \item Betrachte die Relation $\sim$ auf $\QQ$, definiert via $a \sim b
+      :\gdw ab>0$
+    \item Betrachte die Relation $\sim$ auf $\ZZ$, definiert via $a \sim b :\gdw a+b
+      \text{ ist gerade}$. 
+    \item Betrachte die Relation $\sim$ auf $\QQ\setminus\{0\}$, definiert
+      via $a \sim b :\gdw ab\geq >0$
+    \item Sei $n\in\NN, n>1$. Betrachte die Relation $\sim_{n}$ auf $\ZZ$,
+      definiert via\\
+      $a \sim_{n} b :\gdw n \text{ ist ein Teiler von } a-b$.
+    \item Betrachte die Relation $\sim$ auf der Menge aller Menschen, definiert via „\dots ist
+      Geschwister von \dots“. 
+  \end{enumerate}
+  
+\end{aufg}
+
+% ---
+
+\begin{aufg}
+
+  Sei $X$ eine Menge, $n\in\NN$ und $P \ceq \{ P_{1}, \dots, P_{n} \} \sbeq
+  \Pot(X)$ eine Partition von $X$. Zeige, dass eine Äquivalenzrelation
+  $\sim$ auf $X$ existiert, sodass
+  \begin{align*}
+    \quotspace{X}{\sim} = P.
+  \end{align*}
+
+  \begin{proof}
+    (Anleitung) Konstruiert eine Relation $\sim$, indem ihr eine Bedingung
+    angebt, wann zwei Elemente aus $X$ in Relation stehen. Für $x,y\in X$
+    definiere
+    \begin{align*}
+      x\sim y \; :\gdw\; \text{ ???}.
+    \end{align*}
+    Dabei muss diese Relation so definiert sein, dass sie eine
+    Äquivalenzrelation ist. Dies ist nachzuweisen. Außerdem muss die
+    Äquivalenzrelation so konstruiert werden, dass die Äquivalenzklasse
+    eines Elements $x\in X$ mit einer der Teilmengen $P_{i}$ übereinstimmt,
+    also $[x] = P_{i}$ für ein geeignetes $i$ gilt.
+  \end{proof}
+  
+\end{aufg}
+
+% ---
+
