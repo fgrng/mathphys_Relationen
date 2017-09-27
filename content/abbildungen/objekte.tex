@@ -1,0 +1,257 @@
+% ---
+
+\subsection{Abbildungen als eigenständige Objekte}
+
+% ---
+
+In diesem Abschnitt nehmen wir Abbildungen als eigenstände Objekte in den Blick
+-- statt eine Abbildung \emph{für sich} zu studieren, betrachten wir Abbildungen
+\emph{unter sich}. Dazu werden wir klären, was es für Abbildungen heißt
+\emph{gleich} oder \emph{unterschiedlich} zu sein, die Einsicht erhalten, dass
+eine Abbildung selten alleine lebt und eine erste Möglichkeit kennenlernen, mit
+Abbildungen zu \emph{rechnen}.
+
+% ---
+
+\begin{defin}
+  Seien $X, Y, A, B$ Mengen, sowie $f\col X \lra Y$, $g\col A\lra B$
+  Abbildungen. Dann definieren wir die \emph{Gleichheit} von $f$ und $g$
+  via
+  \begin{align*}
+    f = g \quad :\gdw \; \begin{cases}
+      & X = A \\
+      \text{ und }  & Y = B \\
+      \text{ und }  & f(x) = g (x) \quad \text{für alle } x\in X = A
+    \end{cases}
+  \end{align*}
+\end{defin}
+
+% ---
+
+Im ersten Abschnitt über Abbildungen haben wir in dem Abbildungsbegriff drei
+Informationen kodiert: den Definitionsbereich, die Zielmenge und die
+Zuordnungsrelation. Um zwei Abbildungen \emph{gleich} nennen zu dürfen, forden
+wir, dass alle drei Informationen übereinstimmen.
+
+Dies wird besonders relevant, wenn wir uns mit der \emph{Bildabbildung} und
+\emph{Urbildabbildung} beschäftigen. Betrachten wir eine Abbildung $f\col X \lra
+Y$ zwischen zwei Mengen, dann erhalten wir automatisch zwei weitere Abbildungen,
+die zwar ähnlich heißen, sich jedoch insbesondere in Definittionsbereich und
+Zielmenge unterscheiden.
+
+% ---
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann induziert $f$
+  zwei weitere Abbildungen zwischen den Potenzmengen $\Pot(X),\Pot(Y)$:
+  \begin{align*}
+    f \col \Pot(X) &\lra \Pot(Y) \\
+    A &\lmt \{ f(a) \in Y \mid a\in A \}
+    \intertext{die \emph{Bildabbildung} zu $f$ und}
+    f^{-1} \col \Pot(Y) &\lra \Pot(X) \\
+    B &\lmt \{ x \in X \mid f(x)\in B \}
+  \end{align*}
+  die \emph{Urbildabbildung} zu $f$. Wir nennen $f(X)$ das \emph{Bild von
+    $f$} und schreiben auch $\Im(f)$.
+\end{defin}
+
+% ---
+
+Jetzt, wo wir Abbildungen unterscheiden können, wird es Zeit mit Abbildungen
+eigene mathematische Operationen durchzuführen. Die wichtigste Verknüpfung
+zweier Abbildung ist deren Hintereinanderausführung.
+
+% ---
+
+\begin{defin}
+  Seien $X,Y,Z$ Mengen und $f\col X \lra Y$, sowie $g\col Y \lra Z$
+  Abbildungen. Dann definieren wir die Abbildung
+  \begin{align*}
+    g \circ f \col X &\lra Z \\
+    x &\lmt g(f(x))
+  \end{align*}
+  (gelesen: „$g$ nach $f$“) als die \emph{Komposition} oder
+  \emph{Verkettung} von $f$ und $g$.
+\end{defin}
+
+% ---
+
+\begin{defin}
+
+  Es seien $X,Y$ Mengen und $f\col X \lra Y$, $g\col Y \lra X$
+  Abbildungen.
+
+  \begin{enumerate}
+  \item Wir nennen $g$ eine \emph{Linksumkehrung} zu $f$, falls
+    $g\circ f = \id_{X}$ gilt.
+  \item Wir nennen $g$ eine \emph{Rechtsumkehrung} zu $f$, falls
+    $f\circ g = \id_{Y}$ gilt.
+  \item Wir nennen $g$ eine \emph{Umkehrabbildung} zu $f$, falls
+    \begin{align*}
+      g\circ f = \id_{X} \text{ und } f\circ g = \id_{Y}
+    \end{align*}
+    gilt.
+  \end{enumerate}
+  
+\end{defin}
+
+Die Möglichkeit, Abbildungen umzukehren, hängt stark mit Eigenschaften
+zusammen, die wir bereits in diesem Kapitel betrachtet haben. In der Tat
+ist eine Abbildung genau dann links-umkehrbar, wenn sie injektiv. Ob eine
+Abbildung rechts-umkehrbar ist, wenn sie surjektiv ist, bleibt eine
+Glaubensfrage.
+
+% --
+
+\begin{bem}
+
+  Es seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann sind die
+  folgenden Aussagen äquivalent.
+
+  \begin{enumerate}
+    \item $f$ ist injektiv
+    \item Es gibt eine Abbildung $g\col Y \lra X$ mit $g\circ f = \id_{X}$.
+  \end{enumerate}
+
+  \begin{proof}
+    Um die Äquivalnz dieser Aussagen zu zeigen, müssen wir zwei
+    Implikationen beweisen.
+    \begin{itemize}
+    \item[\tiny{(ii) $\Ra$ (i)}] Es gebe eine Abbildung $g\col Y \lra X$
+      mit $g\circ f = \id_{X}$. Um zu zeigen, dass $f$ injektiv ist,
+      verwenden wir das Kriterium (ii) aus Bemerkung [\ref{bem:inj}].
+
+      Seien also $x_{1}, x_{2} \in X$ mit $f(x_{1}) = f(x_{2})$. Durch
+      Anwendung von $g$ auf beiden Seiten dieser Gleichung erhalten wir
+      $(g\circ f)(x_{1}) = (g\circ f)(x_{2})$ und wegen der Eigenschaft von
+      $g$ demnach $\id_{X}(x_{1})=\id_{X}(x_{2})$. Da die Identität jedes
+      Element fest lässt, gilt schließlich $x_{1}=x_{2}$. Dies zeigt, dass
+      $f$ injektiv ist.
+    \item[\tiny{(i) $\Ra$ (ii)}] Sei $f$ injektiv. Unser Ziel ist es, eine
+      Abbildung $g\col Y \lra X$ zu konstruieren, welche $f$ rückgängig
+      macht. Dafür ist es uns egal, wie sich $g$ außerhalb des Bildes
+      $f(X)$ von $f$ verhält. Wir fixieren also wahllos ein $x_{0}\in X$
+      und setzen $g(y) \ceq x_{0}$ für $y\in Y\setminus f(X)$.
+
+      Wir müssen $g$ noch auf $f(X)$ konstruieren. Ist $y\in f(X)$ dann
+      existiert nach Definition von $f(X)$ ein Urbild $x_{y}\in X$ mit
+      $f(x_{y})=y$. Wegen Bemerkung [\ref{bem:inj}] ist dieses $x_{y}$
+      eindeutig. Wir setzen für jedes $y\in f(X)$ das Bild unter $g$ auf
+      dieses eindeutige $g(y) \ceq x_{y}$. Damit ist $g$ eine auf ganz $Y$
+      wohldefinierte Abbildung. Dieses $g$ ist nach Konstruktion eine
+      Linksumkehrung von $f$, denn für $x\in X$ gilt
+      \begin{align*}
+        (g\circ f)(x) 
+        = g (f(x))
+        = x_{f(x)}
+        = x.
+      \end{align*}
+    \end{itemize}
+  \end{proof}
+  
+\end{bem}
+
+% ---
+
+\begin{bem}
+
+  Es seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann sind die
+  folgenden Aussagen äquivalent.
+
+  \begin{enumerate}
+    \item $f$ ist surjektiv.
+    \item Es gibt eine Abbildung $g\col Y \lra X$ mit $f\circ g = \id_{Y}$.
+  \end{enumerate}
+
+  \begin{proof}
+    \quad 
+
+    \begin{itemize}
+    \item[\tiny{(ii) $\Ra$ (i)}] Es gebe eine Abbildung $g\col Y \lra X$
+      mit $f\circ g = \id_{Y}$. Um zu zeigen, dass $f$ surjektiv, müssen
+      wir für jedes $y\in Y$ ein Urbild in $X$ finden. Es sei $y\in Y$;
+      dann ist $g(y)\in X$. Durch die Eigenschaft von $g$ gilt dann
+      $f(g(y)) = (f\circ g)(y) = y$, also ist $g(y)$ das gesuchte Urbild
+      unter $f$ zu $y$.
+    \item[\tiny{(i) $\Ra$ (ii)}] Sei $f$ surjektiv. Unser Ziel ist es, eine
+      Abbildung $g\col Y \lra X$ zu konstruieren, für die $f\circ g$ die
+      Identität ist. Es sei $y\in Y$. Da $f$ surjektiv ist, existiert ein
+      Urbild $x_{y}\in X$ mit $f(x_{y}) = y$. Für jedes $y\in Y$ wählen wir
+      ein (nicht eindeutiges) Urbild $x_{y}\in Y$ und konstruieren so durch
+      die Setzung $g(y) \ceq x_{y}$ unsere gesuchte Abbildung\footnote{Es
+        stellt sich die Frage, ob dies ein vernünftiger
+        Konstruktionsprozess ist. Da wir keine Informationen über die
+        Mengen $X$ und $Y$ haben, könnten diese auch unendlich groß
+        sein. Um $g$ konstruieren zu können, müssen wir also
+        \emph{unendlich oft} eine Auswahl -- die Wahl des Urbilds --
+        treffen. Die Frage, ob diese Vorgehensweise gerechtfertigt oder
+        überzeugend ist, ist eine Glaubensfrage. Das sogenannte
+        Auswahlaxiom ermöglicht uns diese Vorgehensweise; seine Gültigkeit
+        kann jedoch nicht bewiesen werden.}.
+    \end{itemize}
+  \end{proof}
+
+\end{bem}
+
+% ---
+
+Existiert für eine Abbildung eine Links- und eine Rechtsumkehrung, dann
+sind diese Umkehrungen bereits identisch. Mit den eben gezeigten
+Bemerkungen, sehen wir also, dass eine bijektive Abbildung eine eindeutige
+beidseitige Umkehrung -- eine Umkehrabbildung -- besitzt.
+
+% ---
+
+\begin{bem}
+
+  Es seien $X, Y$ Mengen und $f\col X\lra Y$. Ferner seien
+  $g_{l}, g_{r}\col Y \lra X$ zwei Abbildengen, wobei $g_{l}$ eine
+  Linksumkehrung und $g_{r}$ eine Rechtsumkehrung von $f$ ist. Dann gilt
+  $g_{l} = g_{r}$.
+
+  \begin{proof}
+    Nach den oben formulierten Voraussetzungen habe $g_{l}$ und $g_{r}$ den
+    gleichen Wertebereich und die gleiche Zielmenge. Wir müssen noch
+    zeigen, dass sie punktweise Übereinstimmen. Es gelten für alle $x\in X$
+    und alle $y\in Y$ die Gleichungen
+    \begin{align*}
+      (g_{l}\circ f)(x) = \id_{X}(x) \qquad \text{ und } \qquad (f\circ g_{r})(y) = y.
+    \end{align*}
+    Wenden wir auf die zweite Gleichung die Abbildung $g_{l}$ an, erhalten
+    wir
+    \begin{align*}
+      (g_{l}\circ(f\circ g_{r}))(y) = g_{l}(y).
+    \end{align*}
+    Durch Umklammern ergibt sich 
+    \begin{align*}
+      (g_{l}\circ f)(g_{r}(y)) = g_{l}(y).
+    \end{align*}
+    Wegen $g_{l}\circ f = id_{X}$ erhalten wir schließlich
+    $g_{r}(y) = g_{l}(y)$, was die Gleichheit der Abbildungen zeigt.
+  \end{proof}
+  
+\end{bem}
+
+% ---
+
+\begin{folg}
+
+  Es seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann sind die
+  folgenden Aussagen äquivalent.
+
+  \begin{enumerate}
+  \item $f$ ist bijektiv.
+  \item Es gibt eine Abbildung $g\col Y \lra X$ mit $g\circ f = \id_{X}$
+    und $f\circ g = \id_{Y}$.
+  \end{enumerate}
+
+  Diese eindeutige Abbildung zu $f$ nennen wir \emph{die Umkehrabbildung}
+  zu $f$ und bezeichnen\footnote{Dies ist die gleiche Schreibweise, wie die
+    der Urbildabbildung. Da aber die Urbildabbildung
+    $f^{-1}\col \Pot{Y} \lra \Pot{Y}$ und die Umkehrabbildung
+    $f^{-1}\col Y \lra X$ unterschiedliche Werte- und Bildmengen besitzen,
+    besteht im Regelfall keine Verwechslungsgefahr.} diese mit $f^{-1}$.
+  
+\end{folg}
+
+

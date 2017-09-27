@@ -16,7 +16,9 @@
 % --- Header ----------------------------------------------------------
 % ---------------------------------------------------------------------
 
-\providecommand\onetwostyle{oneside}
+\providecommand\CONFonetwostyle{oneside}
+\providecommand\CONFdraftfinal{final}
+
 \input{header/head_koma.tex}
 \input{header/head_math.tex}
 \input{header/head_typo.tex}
@@ -28,24 +30,21 @@
 
 % ---
 
-\title{Relationen und Abbildungen}
+\title{Relationen und Partitionen}
 \author{Fabian Gruenig}
-\date{2013-10-7}
+\date{\today}
 
-%--- Kopf- und Fußzeile
-\pagestyle{fancy}
+% --- Layout
 
-  \fancyhead{} % clear all header fields
-  \fancyhead[L]{\nouppercase{\slshape \leftmark}}
-  \fancyhead[R]{}
+\clearscrheadfoot
 
-  \fancyfoot{} % clear all footer fields
-  \fancyfoot[C]{\small{\thepage}}
+\ihead{\leftmark}
+\ohead{\rightmark}
 
-  \renewcommand{\headrulewidth}{0.4pt}
-  \renewcommand{\footrulewidth}{0.4pt}
+\ifoot{}
+\ofoot{\thepage}
 
-\raggedbottom
+% \raggedbottom
 
 % ---------------------------------------------------------------------
 % --- Content ---------------------------------------------------------
@@ -56,22 +55,25 @@
 % --- Content ---------------------------------------------------------
 
 \pagenumbering{roman}
-
 \input{content/title.tex}
-
 \pagenumbering{arabic}
-
 \input{content/vorwort.tex}
-\newpage
-\input{content/mengen.tex}
-\newpage
-\input{content/relationen.tex}
-\newpage
-\input{content/abbildungen.tex}
 
 \newpage
-\input{content/aufg_rel.tex}
-\input{content/aufg_abb.tex}
+\input{content/mengen/mengen.tex}
+
+\newpage
+\input{content/partitionen/relationen.tex}
+
+\newpage
+\input{content/abbildungen/abbildungen.tex}
+\input{content/abbildungen/kovariation.tex}
+\input{content/abbildungen/objekte.tex}
+% \input{content/abbildungen/kardinalitaeten.tex}
+
+% \newpage
+% \input{content/aufg_rel.tex}
+% \input{content/aufg_abb.tex}
 
 % ---------------------------------------------------------------------
 % --- End -------------------------------------------------------------

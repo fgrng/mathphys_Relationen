@@ -1,0 +1,385 @@
+\section{Abbildungen}
+\label{sec:abb}
+
+Im letzten Kapitel haben wir den Begriff der \emph{Relation} eingeführt, sind
+aber schnell zum Studium der spezielleren Äquivalenzrelationen übergegangen. Wir
+wollen uns in diesem Kapitel mit Abbildungen (oder Funktionen) beschäftigen. Um
+diese jedoch mathematisch korrekt formulieren zu können, brauchen wir einen
+allgemeineren Begriff der \emph{Relation}, denn eine Abbildung setzt Elemente
+\emph{verschiedener} Mengen in Beziehung. Die Äquivalenzrelationen aus dem
+vorherigen Kapitel waren begrifflich nur in der Lage, Elemente aus \emph{ein und
+  derselben} Menge in Beziehung zu setzen.
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $R \sbeq X\times Y$. Dann nennen wir $R$ eine
+  \emph{Relation zwischen $X$ und $Y$}.
+\end{defin}
+
+Auch hier schreiben wir für $(x,y) \in R$ einfach $x \sim y$, falls keine
+Verwechlungsgefahr besteht. Inbesondere sprechen wir nun von allgemeinen
+Relationen und nicht von Äquivalenzrelationen. Die hier betrachteten Relationen
+müssen nicht länger reflexiv, symmetrisch oder transitiv sein; sie können diese
+Eigenschaften meist garnicht besitzen.
+
+Wir werden uns in diesem Kapitel dem Abbildungsbegriff der Hochschulmathematik
+nähern. Diese Näherung erfolgt in drei Schritten. Im ersten Schritt werden wir
+Abbildungen mit Blick auf ihren \emph{Zuordnungscharakter} betrachten. Dazu
+werden wir den bekannten Funktionenbegriff aus der Schulmathematik aufgreifen
+und in eine mengentheoretisch saubere Formulierung überführen. Außerdem erwähnen
+wir kurz zwei wichtige Spezialfälle von Zuordnungen. Im zweiten Schritt
+fokussieren wir das Änderungsverhalten bzw. den \emph{Kovariationsaspekt} von
+Abbildungen. Im Sinne eines Ausblicks auf die zentralen Begriffe der
+Grundvorlesungen „Analysis 1“ und „Lineare Algebra 1“ werden wir
+\emph{Stetigkeit} und \emph{Linearität} als Kovariationseigenschaft von
+Abbildungen motivieren. Im letzten Schritt betrachten wir Abbildungen als
+eigenständige mathematische Objekte.
+
+% ---
+
+\subsection{Abbildungen als Zuordnungsrelationen}
+
+% ---
+
+Aus der Schule kennen wir (so oder so ähnlich) den folgenden Begriff einer
+Abbildung.
+
+\begin{definn}
+  Eine \emph{Abbildung} $f$ ist eine Zuordnungsvorschrift, die
+  jedem Element $x$ genau ein Element $y$ zuordnet.
+\end{definn}
+
+Schrecklich, nicht wahr? Was meinen wir mit \emph{zuordnen}, was soll denn eine
+\emph{Zuordnungsvorschrift} sein; was sind $x$ und $y$? Diese Definition ist
+total schwammig. Zum Glück können wir bereits mit unseren Mitteln einen exakten
+Abbildungsbegriff definieren. Als Motivation dafür dient der aus der
+Schulmathematik bekannte \emph{Funktionsgraph}.
+
+% ---
+
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{./material/graph.png}
+\end{center}
+
+% ---
+
+In diesem Sinne ordnet eine Abbildung einem Element $x$ der horizontalen Achse
+genau dann ein Element $y$ der vertikalen Achse zu, falls der Punkt $(x, y)$ auf
+dem Funktionsgraphen liegt. Interpretieren wir $(x, y)$ nun nicht länger als
+geometrischen Punkt, sondern als Paar von Elementen, so nähern wir uns einer
+Definitionsmöglichkeit von Abbildungen -- ausgehend von dem Relationenbegriff.
+Im abstrakten Setting werden wir in der Hochschulmathematik nicht nur
+Abbildungen zwischen den reellen Zahlen studieren, sondern allgemein Abbildungen
+zwischen beliebigen Mengen. Wir wagen einen ersten Definitionsversuch.
+
+% ---
+
+\begin{definn}
+  Seien $X,Y$ Mengen und $f \sbeq X\times Y$. Dann nennen wir $f$ eine
+  \emph{Abbildung von $X$ nach $Y$}. Falls für $x\in X$ und $y\in Y$ gilt, dass
+  $(x, y) \in f$, dann schreiben wir auch $f(x) = y$ oder $f\col x \lmt y$.
+\end{definn}
+
+% ---
+
+Dem aufmerksamen Leser wird auffallen, dass sich diese Definition (bis auf die
+etwas andere Schreibweise) nicht von der Definition einer \emph{Relation}
+unterscheidet (siehe Anfang des Kapitels). Dem pfiffigen Leser wird darüber
+hinaus auffallen, dass wir nicht alle Aspekte der „Schuldefinition“ einer
+Abbildunge berücksichtigt haben. Bisher haben wir nur das \emph{Zuordnen}
+formalisiert.
+
+Die Forderung, dass „jedem Element $x$ genau ein Element $y$ [zugeordnet wird]“,
+ist in unserem Definitionsversuch nicht enthalten. Sie besteht aus zwei Teilen:
+Jedes zulässige Element $x$ „abbildbar“ sein und die Zuordnung zu $y$ muss
+eindeutig sein. Die zu diesen Eigenschaften passenden Begriffe der
+Hochschulmathematik lauten \emph{linkstotal} und \emph{rechtseindeutig}.
+
+% ---
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $R \sbeq X\times Y$ eine Relation zwischen $X$ und $Y$.
+  Wir nennen $R$ \emph{linkstotal}, falls für jedes Element $x\in X$ ein $y\in
+  Y$ existiert, sodass $x \sim y$.
+  %% \emph{rechtstotal}, falls für jedes Element $y\in Y$ ein
+  %% $x\in X$ existiert, sodass $x \sim y$.
+\end{defin}
+
+% ---
+
+Eine Relation heißt demnach \emph{linsktotal}, falls wir für jedes Element aus der
+\emph{linken} Menge $X$ des kartesischen Produkts $X\times Y$ einen Partner aus
+$Y$ finden. In der Sprache der Abbildungen gesprochen: Jedes Element aus $X$ ist
+eine zulässige Eingabe, $X$ ist der Definitionsbereich der Abbildung.
+
+% ---
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $R \sbeq X\times Y$ eine Relation zwischen $X$ und $Y$.
+  Wir nennen $R$ \emph{rechtseindeutig}, falls zu jedem $x\in X$ höchstens ein
+  $y\in Y$ existiert, sodass $x\sim y$.
+  %% \item \emph{linkseindeutig}, falls zu jedem $y\in Y$ höchstens ein
+  %% $x\in X$ existiert, sodass $x\sim y$
+\end{defin}
+
+% ---
+
+Eine Relation heißt demnach \emph{rechtseindeutig}, falls wir für jedes Element
+aus $X$ maximal ein Element in der \emph{rechten} Menge des kartesischen
+Produkts $X\times Y$ finden. In diesem Sinne wird das Wurzelziehen
+$\sqrt{\cdot}$ keine Abbildung sein, da für $\sqrt{4}$ eben die Zahlen $2$ und
+$-2$ in Frage kommen und so sowohl $4 \sim 2$ und $4 \sim (-2)$ gelten.
+
+% ---
+
+Wir haben nun sämtlichen Handwerkszeug beisammen, um eine mengentheoretisch
+saubere Definition von \emph{Abbildungen} im abstrakten Sinne anzugeben. Wir
+ordnen hierfür einige Begriffe neu an und kodieren in unserem Abbildungsbegriff
+insgesamt drei Informationen: den Definitionsbereich, die Zielmenge und den
+Graph als spezielle Relation zwischen Definitionsbereich und Zielmenge.
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $G \sbeq X\times Y$ eine Relation zwischen $X$ und
+  $Y$. Ist $G$ linkstotal und rechtseindeutig, so nennen wir das Tripel
+  $f\ceq (X,Y,G)$ eine \emph{Abbildung von $X$ nach $Y$} und schreiben
+  \begin{align*}
+    f \col X \lra Y.
+  \end{align*}
+  Es gilt also:
+  \begin{itemize}
+    \item zu jedem $x\in X$ existiert ein $y \in Y$ mit $x \sim y$
+    \item und dieses $y$ ist das einzige Element in $Y$ mit $x \sim y$.
+  \end{itemize}
+  Dieses zu $x$ eindeutige $y$ mit $x\sim y$ bezeichnen wir mit
+  $f(x)$ und schreiben
+  \begin{align*}
+    f(x) = y \,\text{ oder }\, f\col x \lmt y.
+  \end{align*}
+  Gegebenfalls nennen wir $X$ den \emph{Definitionsbereich}, $Y$ die
+  \emph{Zielmenge} und $G$ den \emph{Graph} der Abbildung $f$.
+\end{defin}
+
+% ---
+
+Dies ist die „richtige“ Definition des Abbildungsbegriffs. Alle Grundbegriffe,
+die wir in der Definition verwendet haben, sind bekannt und eindeutig definiert.
+Darüber hinaus haben wir nun eine formal saubere Fassung des
+Zuordnungscharakters der Schuldefinition.
+
+Für die Hochschulmathematik werden mit Blick auf den Zuordnungsaspekt von
+Abbildngen zwei Begriffe relevant, die in der Schulmathematik kaum Beachtung
+finden.
+
+% ---
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. 
+  \begin{enumerate}
+    \item Wir nennen $f$ \emph{injektiv}, falls für alle $x_{1}, x_{2}\in X$ mit
+      $x_{1} \neq x_{2}$ auch $f(x_{1}) \neq f(x_{2})$ gilt.
+    \item Wir nennen $f$ \emph{surjektiv}, falls für alle $y\in Y$ ein $x\in X$
+      existiert, mit $f(x)=y$.
+  \end{enumerate}
+\end{defin}
+
+% ---
+
+Unter \emph{injektiven} Abbildungen verstehen wir Zuordnungen, die
+Ungleichheiten oder Trennungen erhalten. Starte ich mit zwei Elementen, etwa die
+Zahlen $2$ und $-2$, von denen ich weiß, dass sie unterschiedlich sind, dann
+soll eine injektive Abbildung diese Elemente auch auf unterschiedliche Elemente
+Abbilden. Die Abbildung $f\col \RR \lra \RR; x \lmt x^{2}$ wäre demnach keine
+injektive Abbildung, da $f(-2) = 4 = f(2)$ gilt.
+
+Unter \emph{surjektiven} Abbildungen verstehen wir Zuordnungen, die ihre gesamte
+Zielmenge ausschöpfen. Für jedes Element des Zielbereichs müssen wir ein Element
+aus dem Definitionsbereich finden, dass Ersterem zugeordnet wird. Betrachten wir
+wieder die Abbildung $f\col \RR \lra \RR; x \lmt x^{2}$. Diese ist nicht
+surjektiv, da echte Quadrate immer positiv sind wir demnach für die Zahl $-2$
+kein Urbild finden.
+
+Die aus mengentheoretischer Sich kanonischen Beispiele für injektive und
+surjektive Abbildungen sind \emph{Inklusionen} und \emph{Projektionen}. 
+
+% ---
+
+\begin{defin}
+  Seien $A,X$ Mengen mit $A\sbeq X$. Dann nennen wir
+  \begin{align*}
+    \iota\col A &\lra X \\
+    a &\lmt a
+  \end{align*}
+  die \emph{natürliche Inklusion} von $A$ in $X$
+\end{defin}
+
+\begin{anm}
+  $\iota$ ist eine injektive Abbildung.
+\end{anm}
+
+% ---
+
+\begin{defin}
+  Sei $X$ eine Menge und $\sim$ ein Äquivalenzrelation auf $X$. Dann nennen
+  wir
+  \begin{align*}
+    \pi \col X &\lra \quotspace{X}{\sim} \\
+    x &\lmt [x]
+  \end{align*}
+  die \emph{natürliche Projektion} bzgl. $\sim$.
+\end{defin}
+% ---
+
+\begin{anm}
+  $\pi$ ist eine surjektive Abbildung.
+\end{anm}
+
+% ---
+
+\begin{defin}
+  Sei $X$ eine Menge. Dann nennen wir
+  \begin{align*}
+    \id_{X}: X &\lra X \\
+    x &\lmt x
+  \end{align*}
+  die \emph{Identität} auf $X$.
+\end{defin}
+
+% ---
+
+\begin{anm}
+  $\id_{X}$ ist eine gleichzeitig injektiv und surjektiv Abbildung.
+\end{anm}
+
+% ---
+
+Diese eben definierten Eigenschaften von Abbildungen, tauchen in der Mathematik
+immer wieder auf. In der Tat sind die drei genannten Beispiele Inklusion,
+Projektion und Identität \emph{die} zentralen Beispiele für injektive und
+surjektive Abbildungen. Wir können uns jede injektive Abbildung als Inklusion
+vorstellen und jede surjektive Abbildung als eine Projektion auf
+Äquivalenzklassen interpretieren. Vermutlich kann man diese Erkenntnis erst dann
+voll und ganz begreifen und würdigen, falls man am Ende des ersten Jahres des
+Mathematikstudiums darauf zurückblickt. Schreibt Euch am besten eine Erinnerung
+in Euren Kalender: „TODO: Alle injektiven und surjektiven Abbildung, die ich im
+letzten Jahr kennengelern habe, als Inklusion oder Projektion interpretieren“.
+
+Will man die Eigenschaft einer Abbildung, injektiv oder surjektiv zu sein,
+nachzuweisen, gibt es verschiedene Möglichkeiten. Die Gültigkeit einiger dieser
+Möglichkeiten werden wir nachfolgend zeigen. Insbesondere stellen wir den
+Zusammenhang zu der Begriffen der Totalität und Eindeutigkeit von Relationen
+her. Für den Abbildungsbegriff haben wir nur von Linkstotalität und
+Rechtseindeutigkeit gesprochen. Tatsächlich verbergen sich hinter den parallel
+formulierten Begriffen der Rechtstotalität und Linkseindeutigkeit gerade die
+Begriffe der Surjektivität und Injektivität.
+
+\begin{defin}
+  Seien $X,Y$ Mengen und $R \sbeq X\times Y$ eine Relation zwischen $X$ und $Y$.
+  \begin{itemize}
+  \item Wir nennen $R$ \emph{rechtstotal}, falls für jedes Element $y\in Y$ ein
+    $x\in X$ existiert, sodass $x \sim y$.
+  \item Wir nennen $R$ \emph{linkseindeutig}, falls zu jedem $y\in Y$ höchstens
+    ein $x\in X$ existiert, sodass $x\sim y$
+  \end{itemize}
+\end{defin}
+
+% ---
+
+\begin{bem}
+\label{bem:inj}
+
+  Seien $X, Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann sind
+  die folgenden Aussagen äquivalent.
+  \begin{enumerate}
+
+    \item $f$ ist injektiv, d.h. für alle $x_{1}\neq x_{2} \in X$ gilt
+      $f(x_{1})\neq f(x_{2})$.
+
+    \item Für alle $x_{1},x_{2}\in X$ mit $f(x_{1})=f(x_{2})$ gilt
+      bereits $x_{1}=x_{2}$.
+
+    %% \item Für alle $y\in Y$ ist $f^{-1}(\{ y \})$ höchstens
+    %%   einelementig.
+
+    \item Der Graph $G$ von $f$ ist eine linkseindeutige Relation.
+
+  \end{enumerate}
+
+  \begin{proof}
+    \quad
+
+    \begin{itemize}
+    \item[\tiny{(i) $\Ra$ (ii)}] 
+      Dies folgt direkt durch Kontraposition.
+
+    %% \item[\tiny{(ii) $\Ra$ (iii)}] Sei $y\in Y$, $f^{-1}(\{ y \}) \neq
+    %%   \emptyset$ und $x_{1},x_{2}\in f^{-1}(\{ y \})$. Dann gilt $f(x_{1})
+    %%   = y = f(x_{2})$, also wegen (ii) bereits $x_{1}=x_{2}$. Also ist
+    %%   $f^{-1}(\{ y \}) = \{ x_{1} \}$.
+
+    \item[\tiny{(ii) $\Ra$ (iii)}] Seien $y\in Y$ und $x_{1},x_{2}\in X$ mit
+      $x_{1}\sim_{G}y$ und $x_{2}\sim_{G}y$. Dies bedeutet gerade, dass $y =
+      f(x_{1}) = f(x_{2})$. Also gilt wegen (ii) bereits $x_{1} = x_{2}$. Es ist
+      demnach $\sim_{G}$ linkseindeutig.
+
+    \item[\tiny{(iii) $\Ra$ (i)}] Seien $x_{1}, x_{2} \in X$ mit $x_{1}\neq
+      x_{2}$. Angenommen es gilt $f(x_{1}) = f(x_{2}) \qec y$. Dann gilt aber
+      $x_{1}\sim_{G}y$ und $x_{2}\sim_{G} y$. Dies ist ein Widerspruch zur
+      Linkseindeutigkeit von $\sim_{G}$.
+
+    \end{itemize}
+
+  \end{proof}
+
+\end{bem}
+
+% ---
+
+\begin{bem}
+
+  Seien $X, Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann sind
+  die folgenden Aussagen äquivalent.
+
+  \begin{enumerate}
+
+    \item $f$ ist surjektiv, d.h. für alle $y\in Y$ existiert ein $x\in
+      X$, sodass $f(x)=y$.
+
+    %% \item Für alle $y\in Y$ ist $f^{-1}(\{ y \})$ mindestens
+    %%   einelementig.
+
+    %% \item Es gilt $f(X) = Y$.
+
+    \item Der Graph $G$ von $f$ ist rechtstotale Relation.
+
+  \end{enumerate}
+
+  \begin{proof}
+    \quad
+
+    \begin{itemize}
+    
+      \item[\tiny{(i) $\Ra$ (ii)}] Sei $y\in Y$, dann existiert ein $x\in X$ mit
+        $f(x)=y$. Per Definition bedeutet das, dass $(x, y) \in G$. Das
+        funktioniert für jedes $y\in Y$, also ist der Graph rechtstotal.
+
+      %% \item[\tiny{(ii) $\Ra$ (iii)}] Sei $y\in Y$, dann ist $f^{-1}(\{ y
+      %%   \})$ mindestens einelementig. Also existiert ein $x\in X$ mit $x\in
+      %%   f^{-1}(\{ y \})$, d.h. $f(x) = y$. Also ist $y \in f(X)$, was
+      %%   „$\speq$“ zeigt. Die Inklusion „$\sbeq$“ gilt nach Definition der
+      %%   Bildabbildung.
+
+      %% \item[\tiny{(ii) $\Ra$ (iii)}]
+      %%   Sei $y\in Y$. Wir zeigen die Existens von einem Element $x\in X$,
+      %%   mit $x\sim_{G} y$. Da $f(X) = Y$ gilt $y\in f(X)$, also existiert
+      %%   ein $x\in X$ mit $f(x)= y$. Mit anderen Worten $x\sim_{G}y$.
+
+      \item[\tiny{(ii) $\Ra$ (i)}] Sei $y\in Y$. Da $\sim_{G}$ rechtstotal ist,
+        existiert ein $x\in X$ mit $x\sim_{G} y$. Anders formuliert: $f(x) = y$.
+        Wir finden also für jedes vorgelegte $y \in Y$ ein Urbild.
+
+    \end{itemize}
+    
+  \end{proof}
+
+\end{bem}
+
+% ---

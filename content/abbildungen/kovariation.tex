@@ -1,0 +1,95 @@
+% ---
+
+\subsection{Abbildungsbegriffe mit Änderungsaspekt}
+
+% ---
+
+Wir wollen in diesem Abschnitt zwei zentrale Begriffe aus den Grundvorlesungen
+ansprechen. Es geht hierbei nicht darum, diese Begriffe zu verstehen. Vielmehr
+wollen wir durch diese Begriffe einen anderen Blickwinkel auf Abbildung
+gewinnen.
+
+Wir fokussieren bei Abbildung hier nicht länger die Zuordnung von Argumenten zu
+ihren Bildern, sondern werfen einen Blick darauf, wie man Beziehungen von
+Änderungsverhalten im Argument einer Funktion (Variation) und Änderungsverhalten
+im zugehörigen Bild der Funktion (Kovariation\footnote{Quasi, Variationen in der
+  Oppositkategorie, gnihihi. Diese Fußnote ist nur ein Versuch die Tutorinnen
+  und Tutoren zu nerdsnipen (siehe \url{https://xkcd.com/356/}). Liebe Erstis,
+  ignoriert das hier einfach ;).}) beschreiben kann.
+
+% ---
+
+Wir beschränken uns für den Exkurs in die Vorlesung „Analysis 1“ auf Abbildungen
+zwischen reellen Zahlen. Wir setzen dafür die Rechenregeln der reellen Zahlen
+und das Absolutbetrags voraus.
+
+\begin{defin}
+  Es sei $f\col \RR \lra \RR$ eine Abbildung und $x_{0}\in\RR$ ein Element des
+  Definitionsbereichs. Wir nennen $f$ in dem Punkt $x_{0}$ \emph{stetig}, falls
+  für jede beliebige Zahl $\varepsilon > 0$ die folgende Aussage gilt: Es existiert
+  eine Zahl $\delta > 0$, sodass für alle Elemente $x\in \RR$ im
+  Definitionsbereich mit der Eigenschaft $|x - x_{0}| < \delta$ gilt, dass
+  $|f(x) - f(x_{0})| < \varepsilon$.
+\end{defin}
+
+% ---
+
+Die Definition sieht auf den ersten Blick sehr verwirrend aus. Wenn wir sie
+jedoch Stück für Stück auseinandernehmen und als eine Aussage über das
+Änderungsverhalten der Funktion interpretieren, wird ein Schuh draus.
+
+% ---
+
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{./material/stetig.png}
+\end{center}
+
+% ---
+
+Die Definition der Stetigkeit einer Funktion in einem Punkt $x_0$ beginnt mit
+der Vorgabe eines Abstands $\varepsilon > 0$ auf der $Y$-Achse für bestimmte
+Funktionswerte um $f(x_0)$ (siehe „…, dass $|f(x)~-~f(x_0)|~<~\varepsilon$“ und
+den roten \emph{Epsilonschlauch} in der Visualisierung). Es wird bei
+vorliegendem $\varepsilon > 0$ gefordert, dass wir einen Abstand $\delta > 0$
+auf der $X$-Achse finden (siehe „… mit der Eigenschaft $|x - x_{0}| < \delta$
+gilt …“ und die blauen Linien in der Visualisierung), sodass sich die
+Funktionswerte von Elementen innerhalb dieses Abstands um $x_0$ innerhalb des
+Epsilonschlauchs befinden (siehe die schwarzen Markierungen auf den Schaubild
+der Funktion bzw. die dicke grüne Linie).
+
+Zur Verdeutlichung dieses Konzepts betrachten wir eine nicht-stetige Funktion
+reeller Zahlen. Die Funktion aus dem folgenden Schaubild ist an der markierten
+Stelle nicht stetig.
+
+% ---
+
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{./material/nonstetig.png}
+\end{center}
+
+% ---
+
+Wir können den (punktweisen) Stetigkeitsbegriff als eine Aussage über ein
+\emph{gutartiges} Änderungsverhalten von Abbildungen interpretieren. Sei eine
+Abbildung $f$ in einem Punkt $x_0$ stetig. In diesem Fall können wir davon
+ausgehen, dass sich die Urbilder von Punkten, die sich in der Nähe von $f(x_0)$
+befinden, in der Nähe von $x_0$ finden lassen. Ein in diesem Sinne
+\emph{bösartiges}, also plötzliches oder sprunghaftes, Änderungsverhalten äußert
+sich nur in Unstetigkeitsstellen (siehe zweite Visualisierung).
+
+Wir beginnen nun einen Exkurs in die Vorlesung „Lineare Algebr 1“ und beziehen
+uns auch hier auf Abbildungen zwischen reellen Zahlen.
+
+\begin{defin}
+  Es sei $f\col \RR \lra \RR$ eine Abbildung. Wir nennen $f$ eine \emph{lineare}
+  Abbildung, falls für alle Elemente $x, y \in \RR$ aus dem Definitionsbereich
+  und beliebige Zahlen $\lambda$ die folgenden Aussagen gelten.
+  \begin{align*}
+    f(x + y) = f(x) + f(y) \quad \text{ und } \quad f(\lambda \cdot x) = \lambda \cdot f(x)
+  \end{align*}
+\end{defin}
+
+Hier ist die Interpretation der Eigenschaft \emph{Linearität} als eine Aussage
+über gutartiges Änderungsverhalten fast offensichtlich. Bei linearen Abbildungen
+übertragen sich Rechenoperationen in der Argumenten direkt auf Rechenoperationen
+in den Funktionswerten. 

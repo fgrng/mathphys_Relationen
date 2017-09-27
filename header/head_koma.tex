@@ -8,17 +8,75 @@
 % === Document ========================================================
 
 \documentclass[
+  \CONFdraftfinal,
+  ngerman,
+  % --- fontsize
   11pt,
+  % headings=big,
+  % --- page
   a4paper,
-  \onetwostyle,
+  % BCOR5mm,          % Zusaetzlicher Rand auf der Innenseite
+  DIV=11,            % Seitengroesse (siehe Koma Skript Dokumentation !)
+  % DIVcalc,         % automatische Berechnung einer guten Zeilenlaenge
+  1.1headlines,     % Zeilenanzahl der Kopfzeilen
+  headsepline,
+  headinclude=false,     % Kopf einbeziehen
+  footsepline,
+  footinclude=false,     % Fuss einbeziehen
+  % mpinclude,       % Margin einbeziehen
+  mpexclude,        % Margin nicht einbeziehen
+  pagesize,         % Schreibt die Papiergroesse in die Datei.
+  % --- layout
+  \CONFonetwostyle,
+  onecolumn,
   open=right,
-  draft=false
-  ]
-  {scrartcl}
+  cleardoubleempty,
+  titlepage,
+  % --- indention, paragraph
+  % parskip,         % Freiraum in letzter Zeile: 1em
+  % parskip*,        % Freiraum in letzter Zeile: Viertel einer Zeile
+  % parskip+,        % Freiraum in letzter Zeile: Drittel einer Zeile
+  % parskip-,        % Freiraum in letzter Zeile: keine Vorkehrungen
+  % halfparskip,     % Freiraum in letzter Zeile: 1em
+  % halfparskip*,    % Freiraum in letzter Zeile: Viertel einer Zeile
+  % halfparskip+,    % Freiraum in letzter Zeile: Drittel einer Zeile
+  % halfparskip,     % Freiraum in letzter Zeile: keine Vorkehrungen
+  parindent,         % Eingerückt (Standard)
+  % --- title
+  headsepline,
+  nochapterprefix,
+  % --- toc,bib,etc
+  % tocindent,
+  % listsindent,
+  % pointlessnumbers,
+  % --- stuff
+  fleqn,
+]
+{scrartcl}
+
+% === Depedencies =====================================================
+
+\usepackage{calc}
+\usepackage{ifthen}
+
+% === Language & Ecoding ==============================================
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+
+% === Stuff ===========================================================
+
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage[centertags,sumlimits,intlimits,namelimits]{amsmath}
+\usepackage{ragged2e}
 
 % === Page Style ======================================================
 
-\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{scrpage2}
 
 % \setlength{\topmargin}{-2mm}
 % \setlength{\headheight}{3mm}
@@ -28,12 +86,9 @@
 % \setlength{\oddsidemargin}{-1mm}
 % \setlength{\evensidemargin}{-1mm}
 
-% === Language & Ecoding ==============================================
+% --- Style: Kopf- und Fußzeile
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-\usepackage[ngerman]{babel}
+\pagestyle{headings}
 
 % === Table of Content ================================================
 

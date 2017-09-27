@@ -1,0 +1,116 @@
+\subsection{Eine erste Strukturaussage}
+
+% ---
+
+Wir werden an dieser Stelle eine Strukturaussage über Abbildungen
+zeigen. In der Tat lässt sich jede Abbildung als Verkettung einer
+injektiven, einer surjektiven und einer bijektiven Abbildung schreiben. Um
+diese Aussage zu beweisen, wenden wir sämtliche Erkenntnisse aus diesem
+Vortrag mehr oder weniger explizit an.
+
+% ---
+
+\begin{bem}
+\label{bem:niveau}
+
+  Seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Dann definiert
+  \begin{align*}
+    x_{1} \sim x_{2} \quad :\gdw \quad f(x_{1}) = f(x_{2})
+  \end{align*}
+  eine Äquivalenzrelation auf $X$.
+  \begin{proof}
+    Dies folgt sehr einfach aus den Eigenschaften der „$=$“-Relation.
+  \end{proof}
+\end{bem}
+
+% ---
+
+\begin{satz}
+
+  Seien $X,Y$ Mengen und $f\col X \lra Y$ eine Abbildung. Wir betrachten das
+  Diagramm
+
+  \begin{center}
+    \begin{tikzpicture}
+      \matrix(m)[
+      matrix of math nodes,
+      row sep=4em,
+      column sep=4em,
+      text height=2ex, 
+      text depth=0.5ex
+      ]
+      { 
+        X & Y \\
+        \quotspace{X}{\sim} & \Im(f) \\
+      };
+      \path[->,font=\scriptsize,>=angle 90]
+      (m-1-1) edge node[above] {$f$} (m-1-2)
+      (m-1-1) edge node[left] {$\pi$} (m-2-1)
+      (m-2-1) edge node[below] {$\varphi$} (m-2-2)
+      (m-2-2) edge node[right] {$\iota$} (m-1-2);
+    \end{tikzpicture}
+  \end{center}
+  
+  \noindent wobei $\pi\col x \mt [x]$ die Projektion bzgl. der Relation aus
+  [\ref{bem:niveau}] ist und $\iota$ die natürliche Inklusion von
+  $f(X)\sbeq Y$ ist. Weiter sei
+  \begin{align*} 
+    \varphi\col \quotspace{X}{\sim} &\lra \Im(f) \\
+    [x] &\lmt f(x)
+  \end{align*}
+  Dann gilt
+  \begin{enumerate}
+    \item $\varphi$ ist wohldefiniert.
+    \item $\varphi$ ist bijektiv.
+    \item Das Diagramm kommutiert in dem Sinne, dass $f = \iota\circ \varphi
+      \circ \pi$ gilt.
+  \end{enumerate}
+
+  \begin{proof}
+  \quad
+  
+  \begin{enumerate}
+
+    \item Seien $x_{1},x_{2}\in X$, mit $x_{1}\sim x_{2}$. Dann gilt
+      nach Definition von $\sim$, dass $f(x_{1}) = f(x_{2})$. Also
+      \begin{align*}
+        \varphi\big([x_{1}]\big) = f(x_{1}) = f(x_{2}) = \varphi\big([x_{2}]\big).
+      \end{align*}
+
+    \item Wir zeigen die Injektivität und die Surjektivität von
+      $\varphi$.
+      \begin{itemize}
+
+        \item[\tiny{(inj.)}] Seien $x_{1},x_{2}\in X$ mit
+          $\varphi\big([x_{1}]\big) = \varphi\big([x_{2}]\big)$. Dies bedeutet
+          $f(x_{1}) = f(x_{2})$ und damit ist $x_{1}\sim x_{2}$. Nach
+          Bemerkung [\ref{bem:vertreter}] ist dann $[x_{1}] = [x_{2}]$.
+        
+        \item[\tiny{(surj.)}] Sei $y\in f(X)$. Dann existiert nach
+          Definition von $f(X)$ ein $x\in X$ mit $f(x) = y$. Betrachten wir
+          die Äquivalenzklasse von $x$, dann sehen wir
+          $\varphi\big([x]\big) = f(x) = y$.
+
+      \end{itemize}
+
+    \item Wir zeigen die Gleichheit der Abbildungen
+      \begin{align*}
+        f &\col X \lra Y \\
+        \iota\circ\varphi\circ\pi &\col X \lra Y
+      \end{align*}
+      Diese Abbildungen haben offensichtlich die selben Definitionsbereiche
+      und Zielmengen. Bleibt noch zu zeigen, dass sie punktweise
+      übereinstimmen. Sei also $x\in X$. Wir berechnen
+      \begin{align*}
+        (\iota\circ\varphi\circ\pi)(x) = (\iota\circ\varphi)(\pi(x)) =
+        (\iota\circ\varphi)\big([x]\big) = \iota\Big(\varphi\big([x]\big)\Big) =
+        \iota(f(x)) = f(x).
+      \end{align*}
+    \end{enumerate}
+    Damit ist alles gezeigt.
+    
+  \end{proof}
+
+\end{satz}
+
+% ---

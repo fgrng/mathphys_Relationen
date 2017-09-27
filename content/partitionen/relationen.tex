@@ -1,29 +1,29 @@
 \section{Partitionen und Äquivalenzrelationen}
 
-\subsection{„Wohngemeinschaften und die GEZ“}
+\subsection{Partitionen -- „Wohngemeinschaften und die GEZ“}
 
-Wir blicken zurück auf den Beginn des Wintersemesters 2012. Viele viele
-Studienanfänger\_innen lauschen gespannt dem mathematischen Vorkurs, lernen
-sich und die Stadt kennen und ziehen vielleicht in die ein oder andere
-Wohngemeinschaft. Ein paar Tage nach dem Einzug erhalten sie auf einmal
-Post von der Gebühreneinzugszentrale der öffentlich-rechtlichen
-Rundfunkanstalten (kurz GEZ). Seit langer Zeit verlangt sie von jedem
-Menschen in Deutschland Rundfunkgebühren. Das Gebührenmodell betrachtet
-dazu die Menge
+Wir blicken zurück auf den Beginn des Wintersemesters 2012/13. Viele
+Studienanfänger*innen lauschen gespannt dem mathematischen Vorkurs, lernen
+sich und die Stadt kennen und ziehen vielleicht in Wohngemeinschaft
+zusammen. Ein paar Tage nach dem Einzug erhalten sie auf einmal Post von
+der Gebühreneinzugszentrale der öffentlich-rechtlichen Rundfunkanstalten
+(kurz GEZ). Seit langer Zeit verlangte sie von jedem Menschen in
+Deutschland Rundfunkgebühren. Das Gebührenmodell betrachtet dazu die Menge
 \begin{align*}
   D \ceq \{ x \mid x \text{ ist Mensch in Deutschland} \}
 \end{align*}
-Dieses Jahr sieht die Welt aber anders aus. Die GEZ heißt dann ARD ZDF
-Deutschlandradio Beitragsservice, die Rundfunkgebühren heißen
+Seit dem Jahr 2012 sieht die Welt aber anders aus. Die GEZ heißt jetzt ARD
+ZDF Deutschlandradio Beitragsservice, die Rundfunkgebühren heißen
 Rundfunkbeiträge, und das Gebührenmodell sieht eine Haushaltspauschale
 vor. Wir betrachten also
 \begin{align*}
   H \ceq \{ h \mid h \text{ ist ein Haushalt in Deutschland} \}
 \end{align*}
 Die Haushalte $h$ enthalten Menschen aus Deutschland\footnote{Die Haushalte
-  $h$ sind also Mengen, auch wenn wir hier kleine Buchstaben verwenden.}.
-Wir können nur spekulieren, was sich die Zuständigen dabei gedacht haben,
-aber vermutlich hatten sie folgende Hoffnungen
+  $h$ können also als Mengen interpretiert werden, auch wenn wir hier
+  kleine Buchstaben verwenden.}. Wir können nur spekulieren, was sich die
+Zuständigen dabei gedacht haben, aber vermutlich hatten sie folgende
+Hoffnungen
 
 \begin{itemize}
   \item Der Verwaltungsaufwand wird kleiner. „$H$ ist kleiner als $D$“.
@@ -31,7 +31,8 @@ aber vermutlich hatten sie folgende Hoffnungen
   \item Niemand ist Mitglied in zwei Haushalten. Keiner muss doppelt zahlen.
 \end{itemize}
 
-Die GEZ hofft also, dass $H$ eine \emph{Partition} von $D$ ist.
+Die GEZ hofft also, dass $H$ eine \emph{Partition} von $D$ ist. Dieses
+Begriff können wir auf mathematische Weise formulieren.
 
 \begin{defin}
   Sei $X$ eine Menge und $P \ceq \{ P_{1}, P_{2}, P_{3}, \dots \}
@@ -105,16 +106,16 @@ nennen wir Äquivalenzrelationen.
 
 % ---
 
-Im Folgenden schreiben wir $x\sim y$, falls keine Verwechslungsgefahr mit
-anderen Relationen besteht. Ausserdem bezeichnen wir (by abuse of notation)
-die Relation mit $\sim$.
+Im Folgenden schreiben wir kurz $x\sim y$, falls keine Verwechslungsgefahr
+mit anderen Relationen besteht. Ausserdem bezeichnen wir die Relation $R$
+kurz mit $\sim$.
 
 Wir wollen nun untersuchen, ob die beiden Denkweisen der Gebührenzentrale
-und der WG-Bewohner\_innen äquivalent sind oder nicht. Dazu arbeiten wir
+und der WG-Bewohner*innen äquivalent sind oder nicht. Dazu arbeiten wir
 mit den mathematischen Begriffen der Partition und der
-Äquivalenzrelation. Wir betrachten zunächst die Menge der Bewohner\_innen
+Äquivalenzrelation. Wir betrachten zunächst die Menge der Bewohner*innen
 einer WG, also die Menge aller Menschen, die zu einem bestimmten Menschen
-in der „… wohnt zusammen mit …“-Relation stehen. Diese Mengen nennen wir
+in der „…wohnt zusammen mit…“-Relation stehen. Diese Mengen nennen wir
 Äquivalenzklassen.
 
 % ---
@@ -133,12 +134,11 @@ in der „… wohnt zusammen mit …“-Relation stehen. Diese Mengen nennen wir
 
 % ---
 
-In unserem Beispiel der „… wohnt zusammen mit …“-Relation ist $[
-\text{Bob} ]$ die Menge aller Mitbewohner von Bob (und auch Bob). Diese
-Menge ist aber identisch mit $[ \text{Alice} ]$, da Alice und Bob
-natürlich die selben Mitbewohner haben. Die Auswahl des Menschen,
-der\_die de\_die Vertreter\_in der WG ist, ist beliebig und ändert nichts
-an der WG.
+In unserem Beispiel der „…wohnt zusammen mit…“-Relation ist
+$[ \text{Bob} ]$ die Menge aller Mitbewohner von Bob (und auch Bob). Diese
+Menge ist aber identisch mit $[ \text{Alice} ]$, da Alice und Bob natürlich
+die selben Mitbewohner haben. Die Auswahl des Menschen, die die
+Vertreter*in der WG ist, ist beliebig und ändert nichts an der WG.
 
 % ---
 
@@ -161,9 +161,9 @@ an der WG.
       \item[„$\sbeq$“] Sei $z \in [ x ]$, also $z\sim x$. Wegen der
         Transitivität von $\sim$ gilt dann $z\sim y$. Also $z \in [ y ]$.
 
-      \item[„$\speq$“] Sei $z \in [ y ]$, also $z\sim y$. Wir nutzen wider
-        die Transitivität von $\sim$ und erhalten $z\sim x$, d.h. $z\in [
-        x ]$.
+      \item[„$\speq$“] Sei $z \in [ y ]$, also $z\sim y$. Wir nutzen wieder
+        die Transitivität von $\sim$ und erhalten $z\sim x$, also
+        $z\in [ x ]$.
 
     \end{itemize}
     
@@ -199,15 +199,17 @@ verhalten, die \emph{nicht} in Relation stehen.
     \begin{itemize}
 
     \item[\tiny{$\big(x\in {[y]}\big)$}] Gelte $x\in [y]$, dann folgt wegen
-      Bemerkung [\ref{bem:vertreter}] $[x]=[y]$. Also $x\in [x] \cap [y]
-      \neq \emptyset$.
+      Bemerkung [\ref{bem:vertreter}] bereits $[x]=[y]$. Die erste Aussage
+      ist also wahr. Außerdem gilt $x\in [x] \cap [y] \neq \emptyset$,
+      wonach die zweite Aussage falsch ist.
 
     \item[\tiny{$\big(x\notin {[y]}\big)$}] Gelte $x\notin [y]$, also
-      $[x]\neq [y]$. Angenommen es existiert ein $z\in [x]\cap [y]$,
-      d.h. $z \sim x$ und $z \sim y$. Da $\sim$ symmetrisch ist, folgt
-      $x\sim z$ und wegen der Transitivität von $\sim$ auch $x\sim y$. Dann
-      gilt aber $x\in [y]$, ein Widerspruch. Die Annahme war falsch und es
-      gilt $[x] \cap [y] \neq \emptyset$.
+      insbesondere $[x]\neq [y]$. Angenommen es existiert ein
+      $z\in [x]\cap [y]$, also $z \sim x$ und $z \sim y$. Da $\sim$
+      symmetrisch ist, folgt $x\sim z$ und wegen der Transitivität von
+      $\sim$ auch $x\sim y$. Dann gilt aber $x\in [y]$, ein
+      Widerspruch. Die Annahme war falsch und es gilt
+      $[x] \cap [y] \neq \emptyset$.
 
     \end{itemize}
     
@@ -251,7 +253,7 @@ Gebührenzentrale entspricht.
     zeigen
 
     \begin{enumerate}
-      \item $M = \bigcup_{i} [x_{i}]$
+      \item $X = \bigcup_{i} [x_{i}]$
       \item Für alle $x,y \in X$ mit $[x]\neq [y]$ gilt $[x] \cap [y]
         = \emptyset$.
     \end{enumerate}
